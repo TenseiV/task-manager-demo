@@ -3,6 +3,10 @@
     "sequential-thinking": {
       "command": "npx",
       "args": ["-y", "@anthropic/mcp-sequential-thinking"]
+    },
+    "laravel-boost": {
+      "command": "php",
+      "args": ["artisan", "boost:mcp"]
     }
   }
 }
