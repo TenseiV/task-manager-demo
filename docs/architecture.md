@@ -34,3 +34,19 @@
 ## Routes
 - `Route::resource()` pour le CRUD
 - Routes nommées automatiquement (`tasks.index`, `tasks.store`, etc.)
+
+## Écosystème Claude Code (.claude/)
+
+```
+.claude/
+  settings.json      → Permissions allow/deny + hooks (Le Gardien)
+  commands/           → Slash commands : /dev, /pr, /test (Les Macros)
+  hooks/              → Scripts PostToolUse : format-php.sh (L'Automatisation)
+  skills/             → Expertise on-demand : pest-testing, migration, blade (Les Skills)
+  agents/             → Sous-agents : test-writer, security-auditor, doc-writer
+  mcp.json            → Serveurs MCP : sequential-thinking
+```
+
+### Guidelines vs Skills
+- **Guidelines** (CLAUDE.md, AGENTS.md) : Chargées au démarrage, contexte global, règles non négociables
+- **Skills** (.claude/skills/*.md) : Chargées à la demande quand l'agent touche aux fichiers correspondants (via `globs`)

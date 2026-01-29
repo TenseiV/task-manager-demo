@@ -37,6 +37,13 @@ npm run build                  # Compiler les assets frontend
 - Noms de tests en **français** (description comportementale)
 - Utiliser les **factories** et leurs states
 
+### Sous-agents disponibles
+- `@test-writer` : Rédige les tests Pest pour une feature
+- `@security-auditor` : Audit de sécurité pré-PR (injections, XSS, CSRF, mass assignment)
+- `@doc-writer` : Met à jour la documentation après des changements
+- Voir `AGENTS.md` pour le détail des personas
+
 ### Pour aller plus loin
 - Architecture détaillée : `docs/architecture.md`
 - Conventions de test : `docs/testing.md`
+- Agents et délégation : `AGENTS.md`
