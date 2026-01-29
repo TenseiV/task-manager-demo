@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan *)",
+      "Bash(./vendor/bin/pint *)",
+      "Bash(npm run build)",
+      "Bash(git *)",
+      "Bash(gh pr *)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/format-php.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
